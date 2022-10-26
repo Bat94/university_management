@@ -51,5 +51,9 @@ public class ManagementController {
     public ResponseEntity<SinhVien_DMLopEntity> update(@PathVariable(value = "id")Long id,@RequestBody ManagementDto managementDto){
         return iManagementService.update(id,managementDto);
     }
+    @DeleteMapping("/management/{id}")
+    public ResponseEntity<SinhVien_DMLopEntity> delete(@PathVariable(value = "id")Long id){
+        return iManagementService.deleteSinhVien_DmLop(id);
+    }
 
 }

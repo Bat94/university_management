@@ -11,4 +11,6 @@ public interface IManagementService {
     ResponseEntity<List<SinhVien_DMLopEntity>> getListSinhVien(Long sinhVien);
 
     ResponseEntity<SinhVien_DMLopEntity> update(Long id,ManagementDto managementDto);
+
+    ResponseEntity<SinhVien_DMLopEntity> deleteSinhVien_DmLop(Long id);
 }
