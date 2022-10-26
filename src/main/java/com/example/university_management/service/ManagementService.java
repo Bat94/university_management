@@ -88,4 +88,14 @@ public class ManagementService implements IManagementService {
             SinhVien_DMLopEntity update =managementRepository.save(sinhVien_dmLopEntity);
             return new ResponseEntity<>(update,HttpStatus.OK);
     }
+
+    @Override
+    public ResponseEntity<SinhVien_DMLopEntity> deleteSinhVien_DmLop(Long id) {
+        SinhVien_DMLopEntity sinhVien_dmLopEntity = managementRepository.findOneById(id);
+            if(sinhVien_dmLopEntity == null){
+                return ResponseEntity.notFound().build();
+            }
+            managementRepository.delete(sinhVien_dmLopEntity);
+            return ResponseEntity.ok().build();
+    }
 }
